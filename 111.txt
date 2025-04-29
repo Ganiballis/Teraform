@@ -1,0 +1,35 @@
+rror: Duplicate data "external" configuration
+│ 
+│   on main.tf line 5:
+│    5: data "external" "example" {
+│ 
+│ A external data resource named "example" was already declared at local.tf:1,1-26. Resource names must be unique per
+│ type in each module.
+╵
+╷
+│ Error: Duplicate resource "local_file" configuration
+│ 
+│   on main.tf line 10:
+│   10: resource "local_file" "example" {
+│ 
+│ A local_file resource named "example" was already declared at local.tf:6,1-32. Resource names must be unique per type
+│ in each module.
+╵
+╷
+│ Error: Duplicate provider configuration
+│ 
+│   on providers.tf line 1:
+│    1: provider "local" {}
+│ 
+│ A default (non-aliased) provider configuration for "local" was already given at main.tf:1,1-17. If multiple
+│ configurations are required, set the "alias" argument for alternative configurations.
+╵
+╷
+│ Error: Duplicate provider configuration
+│ 
+│   on providers.tf line 3:
+│    3: provider "external" {}
+│ 
+│ A default (non-aliased) provider configuration for "external" was already given at main.tf:3,1-20. If multiple
+│ configurations are required, set the "alias" argument for alternative configurations.
+
